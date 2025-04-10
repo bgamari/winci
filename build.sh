@@ -49,7 +49,7 @@ WINSSH=${WINSSH:=$(find . -mindepth 1 -maxdepth 1 -type f -name 'OpenSSH-Win64-v
 }
 rm -rf assets
 mkdir -p assets
-ln $WINSSH assets/OpenSSH-Win64.msi
+ln -s $WINSSH assets/OpenSSH-Win64.msi
 
 [ "${ACCEL:-}" ] || case "$(uname -s)" in
 Linux)	ACCEL=kvm:tcg;;
