@@ -42,7 +42,7 @@ esac
 	exit 1
 }
 
-WINSSH=$(find . -mindepth 1 -maxdepth 1 -type f -name 'OpenSSH-Win64-v*.msi' | sort -r | head -n 1)
+WINSSH=${WINSSH:=$(find . -mindepth 1 -maxdepth 1 -type f -name 'OpenSSH-Win64-v*.msi' | sort -r | head -n 1)}
 [ "$WINSSH" ] || {
 	echo "unable to find 'OpenSSH-Win64-v*.msi'" >&2
 	exit 1
